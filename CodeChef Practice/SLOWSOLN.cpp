@@ -1,19 +1,24 @@
+//SLOWSOLN
+
 #include<bits/stdc++.h>
 using namespace std;
+
+#define pb push_back
 #define ll long long
-#define ar array
-long int n,a,b,c,k,t,temp,count=0;
+
 
 void solve(){
 
 }
 
-int main(){
 
+int main(){
+    ll t;
     cin>>t;
     while(t--){
         solve();
     }
-
-   	return 0;
+    
+    
+    return 0;
 }
