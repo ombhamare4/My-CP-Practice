@@ -1,4 +1,4 @@
-/*Remove Duplicates in-place from Sorted Array*/
+/*Find all symmetric pairs in array*/
 
 #include<bits/stdc++.h>
 
