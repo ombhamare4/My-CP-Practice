@@ -1,0 +1,81 @@
+
+/*
+Not Passed The Case? Try One more Time
+*/
+#include <bits/stdc++.h>
+using namespace std;
+
+typedef long long ll;
+typedef long double ld;
+typedef complex<ld> cd;
+typedef string str;
+
+typedef pair<int, int> ii;
+typedef tuple<int, int, int> iii;
+
+typedef vector<int> vi;
+typedef vector<ii> vii;
+typedef vector<ld> vd;
+typedef vector<ll> vll;
+
+typedef set<int> si;
+typedef set<ii> sii;
+typedef set<ld> sd;
+typedef set<ll> sl;
+
+typedef map<int, int> mp;
+typedef priority_queue<int> pqi;
+typedef queue<int> qi;
+
+#define mp make_pair
+#define pb push_back
+#define f first
+#define s second
+
+void solve()
+{
+    ll n, x;
+    cin >> n;
+    int group1 = 0, group2 = 0;
+    vll vc(n);
+    for (int i = 0; i < n; i++)
+    {
+        int it;
+        cin >> it;
+        vc[i] = it;
+    }
+
+    // Compuete the total sum
+    // Iterate over all possible subsets
+    // Compute the sum of each subset
+    // Track the minimum difference
+    ll total = accumulate(vc.begin(), vc.end(), 0LL);
+    ll best = LLONG_MAX;
+
+    for(int i=0;i<pow(2,n);i++){
+        ll sum1 = 0;
+        for(int j=0;j<n;j++){
+            if(i & (1<<j)){
+                sum1 += vc[j];
+            }
+        }
+        ll sum2 = total - sum1;
+        best = min(best, abs(sum1 - sum2));
+    }
+
+    cout << best << "\n";
+
+}
+
+int main()
+{
+    ll t;
+    // cin >> t;
+    t = 1;
+    while (t--)
+    {
+        solve();
+    }
+
+    return 0;
+}
